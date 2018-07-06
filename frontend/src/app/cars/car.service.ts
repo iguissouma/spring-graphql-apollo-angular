@@ -4,7 +4,7 @@ import { deleteCar, getAllCars, getCar, saveCar } from '../graphql/cars.query';
 import { DeleteCarMutationArgs, GetAllCars } from '@app/types';
 import { ApolloQueryResult, WatchQueryOptions } from 'apollo-client';
 import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class CarService {
