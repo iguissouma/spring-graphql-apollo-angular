@@ -38,8 +38,9 @@ public class CarService {
     }
 
     @GraphQLMutation(name = "deleteCar")
-    public void deleteCar(@GraphQLArgument(name = "id") Long id) {
+    public Boolean deleteCar(@GraphQLArgument(name = "id") Long id) {
         carRepository.deleteById(id);
+        return Boolean.TRUE;
     }
 
     @GraphQLQuery(name = "isCool")
