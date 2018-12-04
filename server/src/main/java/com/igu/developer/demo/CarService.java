@@ -4,12 +4,14 @@ import io.leangen.graphql.annotations.GraphQLArgument;
 import io.leangen.graphql.annotations.GraphQLContext;
 import io.leangen.graphql.annotations.GraphQLMutation;
 import io.leangen.graphql.annotations.GraphQLQuery;
+import io.leangen.graphql.spqr.spring.annotation.GraphQLApi;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@GraphQLApi
 public class CarService {
 
     private final CarRepository carRepository;
