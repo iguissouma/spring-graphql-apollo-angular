@@ -1,0 +1,7 @@
+query AllCars {
+  cars{
+     id
+     name
+     giphyUrl
+  }
+}
