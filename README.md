@@ -1,5 +1,5 @@
-# Basic CRUD App with Angular 5.0 and Spring Boot 2.0
-This example app shows how to build a basic CRUD app with Spring Boot 2.0, GraphQL, SPQR, Apollo Client and Angular 5.0.
+# Basic CRUD App with Angular 7.0 and Spring Boot 2.0
+This example app shows how to build a basic CRUD app with Spring Boot 2.0, GraphQL, SPQR, Apollo Client and Angular 7.0.
 
 **Prerequisites:** [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [Node.js](https://nodejs.org/).
 
