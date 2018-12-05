@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {Location} from '@angular/common';
-import {ActivatedRoute, Router} from '@angular/router';
-import {TdDialogService} from '@covalent/core';
-import {AllCarsGQL, DeleteCarGQL, GetCarGQL, SaveCarGQL} from "@app/generated/graphql";
-import {pluck} from "rxjs/operators";
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TdDialogService } from '@covalent/core';
+import { AllCarsGQL, DeleteCarGQL, GetCarGQL, SaveCarGQL } from "@app/generated/graphql";
+import { pluck } from "rxjs/operators";
 
 @Component({
   selector: 'app-car-edit',
@@ -19,10 +19,10 @@ export class CarEditComponent implements OnInit {
     private allCarsGQL: AllCarsGQL,
     private saveCarGQL: SaveCarGQL,
     private deleteCarGQL: DeleteCarGQL,
-              private activatedRoute: ActivatedRoute,
-              private dialogService: TdDialogService,
-              private router: Router,
-              private location: Location) {
+    private activatedRoute: ActivatedRoute,
+    private dialogService: TdDialogService,
+    private router: Router,
+    private location: Location) {
   }
 
   ngOnInit() {

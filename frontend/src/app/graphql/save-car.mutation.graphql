@@ -1,7 +1,7 @@
 mutation saveCar($car: CarInput!) {
   saveCar(car: $car) {
-      id
-      name
-      giphyUrl
+    id
+    name
+    giphyUrl
   }
 }

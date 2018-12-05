@@ -1,12 +1,12 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {MatPaginator, MatSort} from '@angular/material';
-import {MatTableDataSource} from '@angular/material/table';
-import {TdDialogService} from '@covalent/core'
-// @ts-ignore
-import {AllCarsGQL, DeleteCarGQL} from '@app/generated/graphql';
-import {Car} from '../../types';
-import {pluck} from "rxjs/operators";
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MatPaginator, MatSort } from '@angular/material';
+import { MatTableDataSource } from '@angular/material/table';
+import { TdDialogService } from '@covalent/core'
+import { pluck } from "rxjs/operators";
+
+import { AllCarsGQL, DeleteCarGQL } from '@app/generated/graphql';
+import { Car } from '@app/types';
 
 @Component({
   selector: 'app-car-list',
@@ -21,16 +21,15 @@ export class CarListComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(
-    private allCarsGQL: AllCarsGQL,
-    private deleteCarGQL: DeleteCarGQL,
+  constructor(private allCarsGQL: AllCarsGQL,
+              private deleteCarGQL: DeleteCarGQL,
               private dialogService: TdDialogService,
               private router: Router,
               private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.cars$ = this.allCarsGQL.watch().valueChanges.pipe(pluck('data', 'cars'))
+    this.cars$ = this.allCarsGQL.watch().valueChanges.pipe(pluck('data', 'cars'));
     this.cars$.subscribe(
       (data) => {
         this.dataSource.data = data;

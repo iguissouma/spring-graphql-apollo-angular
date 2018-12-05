@@ -5,16 +5,16 @@
     <mat-divider></mat-divider>
     <mat-card-content>
       <div>
-        <mat-table [dataSource]="dataSource" matSort matSortActive="id" matSortDirection="asc" class="cars-table">
+        <mat-table [dataSource]="dataSource" class="cars-table" matSort matSortActive="id" matSortDirection="asc">
           <ng-container cdkColumnDef="id">
-            <mat-header-cell fxFlex="50px" *cdkHeaderCellDef mat-sort-header> ID</mat-header-cell>
-            <mat-cell fxFlex="50px" *cdkCellDef="let row"> {{row.id}}</mat-cell>
+            <mat-header-cell *cdkHeaderCellDef fxFlex="50px" mat-sort-header> ID</mat-header-cell>
+            <mat-cell *cdkCellDef="let row" fxFlex="50px"> {{row.id}}</mat-cell>
           </ng-container>
           <ng-container cdkColumnDef="image">
             <mat-header-cell *cdkHeaderCellDef mat-sort-header> Image</mat-header-cell>
-            <mat-cell fxFlex="100px"  *cdkCellDef="let row">
+            <mat-cell *cdkCellDef="let row" fxFlex="100px">
               <div class="giphy">
-                <img src="{{row.giphyUrl}}" alt="{{row.name}}" class="img-circular">
+                <img alt="{{row.name}}" class="img-circular" src="{{row.giphyUrl}}">
               </div>
             </mat-cell>
           </ng-container>
@@ -23,21 +23,23 @@
             <mat-cell *cdkCellDef="let row"> {{row.name}}</mat-cell>
           </ng-container>
           <ng-container matColumnDef="buttons">
-            <mat-header-cell fxFlex="75px" *matHeaderCellDef>
-              <button mat-icon-button color="primary" [routerLink]="['new']">
+            <mat-header-cell *matHeaderCellDef fxFlex="75px">
+              <button [routerLink]="['new']" color="primary" mat-icon-button>
                 <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
               </button>
             </mat-header-cell>
-            <mat-cell fxFlex="75px" *matCellDef="let row" (click)="$event.stopPropagation()">
-              <button mat-icon-button (click)="removeCar(row.id)">
+            <mat-cell (click)="$event.stopPropagation()" *matCellDef="let row" fxFlex="75px">
+              <button (click)="removeCar(row.id)" mat-icon-button>
                 <mat-icon>delete</mat-icon>
               </button>
             </mat-cell>
           </ng-container>
           <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: displayedColumns" class="car" mat-ripple (click)="editCar(row.id)"></mat-row>
+          <mat-row (click)="editCar(row.id)" *matRowDef="let row; columns: displayedColumns" class="car"
+                   mat-ripple></mat-row>
         </mat-table>
-        <mat-paginator #paginator [length]="dataSource?.data?.length" [pageIndex]="0" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        <mat-paginator #paginator [length]="dataSource?.data?.length" [pageIndex]="0" [pageSizeOptions]="[5, 10, 25, 100]"
+                       [pageSize]="5"></mat-paginator>
       </div>
     </mat-card-content>
   </mat-card>

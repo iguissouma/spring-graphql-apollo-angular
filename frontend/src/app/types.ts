@@ -2,6 +2,7 @@
 
 /* Long type */
 export type Long = any;
+
 /* Query root type */
 export interface Query {
   cars?: Car[] | null;
@@ -14,6 +15,7 @@ export interface Car {
   isCool?: boolean | null;
   name?: string | null;
 }
+
 /* Mutation root type */
 export interface Mutation {
   deleteCar?: boolean | null;
@@ -21,18 +23,24 @@ export interface Mutation {
 }
 
 export interface CarInput {
-  name?: string | null /* A car&#x27;s name */;
-  id?: Long | null /* A car&#x27;s id */;
+  name?: string | null /* A car&#x27;s name */
+  ;
+  id?: Long | null /* A car&#x27;s id */
+  ;
 }
+
 export interface CarQueryArgs {
   id?: Long | null;
 }
+
 export interface DeleteCarMutationArgs {
   id?: Long | null;
 }
+
 export interface SaveCarMutationArgs {
   car?: CarInput | null;
 }
+
 export namespace GetCar {
   export type Variables = {
     id: Long;
