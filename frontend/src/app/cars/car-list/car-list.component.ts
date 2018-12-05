@@ -51,10 +51,18 @@ export class CarListComponent implements OnInit, AfterViewInit {
       if (accept) {
         this.deleteCarGQL.mutate({
           id: id,
+        }, {
+          update: (proxy, {data: {deleteCar}}) => {
+            // Read the data from our cache for this query.
+            const data: any = proxy.readQuery({query: this.allCarsGQL.document});
+            var index = data.cars.map(x => x.id).indexOf(id);
+            data.cars.splice(index, 1);
+            // Write our data back to the cache.
+            proxy.writeQuery({query: this.allCarsGQL.document, data});
+          }
         })
           .subscribe(({data}) => {
             console.log('Car deleted');
-            this.router.navigate(['/cars'])
           }, (error) => {
             console.log('there was an error sending the query', error);
           });
