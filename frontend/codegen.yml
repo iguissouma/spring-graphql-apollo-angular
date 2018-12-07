@@ -1,0 +1,18 @@
+schema:
+  - http://localhost:8080/graphql
+documents:
+  - src/app/graphql/all-cars.query.graphql
+  - src/app/graphql/delete-car.mutation.graphql
+  - src/app/graphql/get-car.query.graphql
+  - src/app/graphql/save-car.mutation.graphql
+config:
+  resolvers: false
+generates:
+  src/app/generated/graphql.ts:
+    config:
+      resolvers: false
+    plugins:
+      - typescript-common
+      - typescript-client
+      - typescript-apollo-angular
+require: []

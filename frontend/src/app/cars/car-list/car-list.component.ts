@@ -2,8 +2,8 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatPaginator, MatSort } from '@angular/material';
 import { MatTableDataSource } from '@angular/material/table';
-import { TdDialogService } from '@covalent/core'
-import { pluck } from "rxjs/operators";
+import { TdDialogService } from '@covalent/core';
+import { pluck } from 'rxjs/operators';
 
 import { AllCarsGQL, DeleteCarGQL } from '@app/generated/graphql';
 import { Car } from '@app/types';
@@ -36,7 +36,7 @@ export class CarListComponent implements OnInit, AfterViewInit {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       }
-    )
+    );
   }
 
   editCar(id: number) {
@@ -55,7 +55,7 @@ export class CarListComponent implements OnInit, AfterViewInit {
           update: (proxy, {data: {deleteCar}}) => {
             // Read the data from our cache for this query.
             const data: any = proxy.readQuery({query: this.allCarsGQL.document});
-            var index = data.cars.map(x => x.id).indexOf(id);
+            const index = data.cars.map(x => x.id).indexOf(id);
             data.cars.splice(index, 1);
             // Write our data back to the cache.
             proxy.writeQuery({query: this.allCarsGQL.document, data});

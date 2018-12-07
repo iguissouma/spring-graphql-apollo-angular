@@ -13,96 +13,97 @@ export type Long = any;
 // ====================================================
 
 export namespace AllCars {
-  export type Variables = {};
+  export interface Variables {}
 
-  export type Query = {
-    __typename?: "Query";
+  export interface Query {
+    __typename?: 'Query';
 
     cars: (Cars | null)[] | null;
-  };
+  }
 
-  export type Cars = {
-    __typename?: "Car";
+  export interface Cars {
+    __typename?: 'Car';
 
     id: Long | null;
 
     name: string | null;
 
     giphyUrl: string | null;
-  };
+  }
 }
 
 export namespace DeleteCar {
-  export type Variables = {
+  export interface Variables {
     id: Long;
-  };
+  }
 
-  export type Mutation = {
-    __typename?: "Mutation";
+  export interface Mutation {
+    __typename?: 'Mutation';
 
     deleteCar: boolean | null;
-  };
+  }
 }
 
 export namespace GetCar {
-  export type Variables = {
+  export interface Variables {
     id: Long;
-  };
+  }
 
-  export type Query = {
-    __typename?: "Query";
+  export interface Query {
+    __typename?: 'Query';
 
     car: Car | null;
-  };
+  }
 
-  export type Car = {
-    __typename?: "Car";
+  export interface Car {
+    __typename?: 'Car';
 
     id: Long | null;
 
     name: string | null;
 
     giphyUrl: string | null;
-  };
+  }
 }
 
-export namespace SaveCar {
-  export type Variables = {
+export namespace PersistCar {
+  export interface Variables {
     car: CarInput;
-  };
+  }
 
-  export type Mutation = {
-    __typename?: "Mutation";
-
-    saveCar: SaveCar | null;
-  };
-
-  export type SaveCar = {
-    __typename?: "Car";
+  export interface SaveCar {
+    __typename?: 'Car';
 
     id: Long | null;
 
     name: string | null;
 
     giphyUrl: string | null;
-  };
+  }
+
+  export interface Mutation {
+    __typename?: 'Mutation';
+
+    saveCar: SaveCar | null;
+  }
+
 }
 
 // ====================================================
 // START: Apollo Angular template
 // ====================================================
 
-import { Injectable } from "@angular/core";
-import * as Apollo from "apollo-angular";
+import { Injectable } from '@angular/core';
+import * as Apollo from 'apollo-angular';
 
-import gql from "graphql-tag";
+import gql from 'graphql-tag';
 
 // ====================================================
 // Apollo Services
 // ====================================================
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class AllCarsGQL extends Apollo.Query<AllCars.Query, AllCars.Variables> {
   document: any = gql`
@@ -117,7 +118,7 @@ export class AllCarsGQL extends Apollo.Query<AllCars.Query, AllCars.Variables> {
 }
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class DeleteCarGQL extends Apollo.Mutation<DeleteCar.Mutation,
   DeleteCar.Variables> {
@@ -129,7 +130,7 @@ export class DeleteCarGQL extends Apollo.Mutation<DeleteCar.Mutation,
 }
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class GetCarGQL extends Apollo.Query<GetCar.Query, GetCar.Variables> {
   document: any = gql`
@@ -144,10 +145,9 @@ export class GetCarGQL extends Apollo.Query<GetCar.Query, GetCar.Variables> {
 }
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
-export class SaveCarGQL extends Apollo.Mutation<SaveCar.Mutation,
-  SaveCar.Variables> {
+export class SaveCarGQL extends Apollo.Mutation<PersistCar.Mutation, PersistCar.Variables> {
   document: any = gql`
     mutation saveCar($car: CarInput!) {
       saveCar(car: $car) {

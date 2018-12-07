@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TdDialogService } from '@covalent/core';
-import { AllCarsGQL, DeleteCarGQL, GetCarGQL, SaveCarGQL } from "@app/generated/graphql";
-import { pluck } from "rxjs/operators";
+import { AllCarsGQL, DeleteCarGQL, GetCarGQL, SaveCarGQL } from '@app/generated/graphql';
+import { pluck } from 'rxjs/operators';
 
 @Component({
   selector: 'app-car-edit',
@@ -49,7 +49,7 @@ export class CarEditComponent implements OnInit {
         // Read the data from our cache for this query.
         const data: any = proxy.readQuery({query: this.allCarsGQL.document});
         if (car.id) {
-          let index = data.cars.map(x => x.id).indexOf(car.id);
+          const index = data.cars.map(x => x.id).indexOf(car.id);
           data.cars[index] = saveCar;
         } else {
           data.cars.push(saveCar);
@@ -60,7 +60,7 @@ export class CarEditComponent implements OnInit {
     })
       .subscribe(({data}) => {
         console.log('Car added', data);
-        this.router.navigate(['/cars'])
+        this.router.navigate(['/cars']);
       }, (error) => {
         console.log('there was an error sending the query', error);
       });
@@ -77,7 +77,7 @@ export class CarEditComponent implements OnInit {
             update: (proxy, {data: {deleteCar}}) => {
               // Read the data from our cache for this query.
               const data: any = proxy.readQuery({query: this.allCarsGQL.document});
-              var index = data.cars.map(x => x.id).indexOf(id);
+              const index = data.cars.map(x => x.id).indexOf(id);
               data.cars.splice(index, 1);
               // Write our data back to the cache.
               proxy.writeQuery({query: this.allCarsGQL.document, data});
@@ -86,7 +86,7 @@ export class CarEditComponent implements OnInit {
         )
           .subscribe(({data}) => {
             console.log('Car deleted');
-            this.router.navigate(['/cars'])
+            this.router.navigate(['/cars']);
           }, (error) => {
             console.log('there was an error sending the query', error);
           });
