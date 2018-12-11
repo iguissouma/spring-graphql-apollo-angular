@@ -1,5 +1,5 @@
-query AllCars {
-  cars{
+query ListCars {
+  cars {
     id
     name
     giphyUrl

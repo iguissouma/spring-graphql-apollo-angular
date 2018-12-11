@@ -1,4 +1,4 @@
-mutation saveCar($car: CarInput!) {
+mutation SaveCar($car: CarInput!) {
   saveCar(car: $car) {
     id
     name

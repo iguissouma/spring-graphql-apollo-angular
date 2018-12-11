@@ -1,3 +1,0 @@
-mutation deleteCar($id: Long!) {
-  deleteCar(id: $id)
-}

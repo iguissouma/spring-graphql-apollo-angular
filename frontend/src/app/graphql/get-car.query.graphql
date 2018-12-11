@@ -1,7 +1,0 @@
-query getCar($id: Long!){
-  car(id : $id){
-    id
-    name
-    giphyUrl
-  }
-}
