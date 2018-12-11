@@ -1,0 +1,26 @@
+schema:
+  - http://localhost:8080/graphql
+documents:
+  - src/app/graphql/delete-car.graphql
+  - src/app/graphql/get-car.graphql
+  - src/app/graphql/list-cars.graphql
+  - src/app/graphql/save-car.graphql
+config:
+  resolvers: false
+overwrite: true
+generates:
+  src/app/generated/graphql.ts:
+    config:
+      noNamespaces: true
+      resolvers: false
+      enumsAsTypes: true
+      avoidOptionals: true
+      immutableTypes: true
+      scalars:
+        Long: number
+    plugins:
+      - typescript-common
+      - typescript-client
+      - typescript-server
+      - typescript-apollo-angular
+require: []

@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CovalentDialogsModule } from '@covalent/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
+
+import { CovalentDialogsModule } from '@covalent/core';
 
 import { AppComponent } from '@app/app.component';
 import { GraphQLModule } from '@app/graphql.module';
@@ -24,10 +26,13 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    CovalentDialogsModule,
+    FormsModule,
     RouterModule.forRoot(routes),
+
+    CovalentDialogsModule,
     GraphQLModule,
     MaterialModule,
+
     CarsModule
   ],
   providers: [],

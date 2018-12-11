@@ -87,6 +87,7 @@
               "src/tsconfig.spec.json"
             ],
             "exclude": [
+              "src/app/api/index.ts",
               "**/node_modules/**"
             ]
           }
@@ -127,6 +128,11 @@
     },
     "@schematics/angular:directive": {
       "prefix": "app"
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false
     }
   }
 }

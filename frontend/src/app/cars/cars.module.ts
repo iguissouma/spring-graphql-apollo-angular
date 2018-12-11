@@ -5,7 +5,7 @@ import { CarListComponent } from './car-list/car-list.component';
 import { CarEditComponent } from './car-edit/car-edit.component';
 import { MaterialModule } from '../material.module';
 import { FormsModule } from '@angular/forms';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
   {path: 'cars', component: CarListComponent},

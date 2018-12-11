@@ -1,4 +1,12 @@
+import { FormsModule } from '@angular/forms';
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+
+import { CovalentDialogsModule } from '@covalent/core';
+
+import { GraphQLModule } from '../../graphql.module';
+import { MaterialModule } from '../../material.module';
 
 import { CarEditComponent } from './car-edit.component';
 
@@ -8,7 +16,15 @@ describe('CarEditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CarEditComponent]
+      declarations: [CarEditComponent],
+      imports: [
+        FormsModule,
+        RouterTestingModule,
+
+        CovalentDialogsModule,
+        GraphQLModule,
+        MaterialModule,
+      ],
     })
       .compileComponents();
   }));
