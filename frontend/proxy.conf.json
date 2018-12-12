@@ -2,5 +2,9 @@
   "/graphql": {
     "target": "http://localhost:8080",
     "secure": false
+  },
+  "/graphql_apq": {
+    "target": "http://localhost:8080",
+    "secure": false
   }
 }
