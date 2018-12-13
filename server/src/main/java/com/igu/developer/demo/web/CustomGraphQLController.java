@@ -6,7 +6,6 @@ import graphql.ExecutionInput;
 import graphql.ExecutionResult;
 import graphql.ExecutionResultImpl;
 import graphql.GraphQL;
-import graphql.execution.instrumentation.dataloader.DataLoaderDispatcherInstrumentation;
 import graphql.schema.GraphQLSchema;
 import io.leangen.graphql.spqr.spring.autoconfigure.DataLoaderRegistryFactory;
 import io.leangen.graphql.spqr.spring.autoconfigure.DefaultGlobalContext;
@@ -65,7 +64,7 @@ public class CustomGraphQLController {
                 .query(query)
                 .operationName(operationName)
                 .variables(variables)
-                .context(new DefaultGlobalContext(raw, dataLoaders))
+                .context(new DefaultGlobalContext(raw))
                 .build());
         return executionResult.toSpecification();
     }
@@ -85,10 +84,7 @@ public class CustomGraphQLController {
 
 
     private GraphQL graphQL(DataLoaderRegistry dataLoaders) {
-        if (dataLoaders == null) {
-            return graphQL;
-        }
-        return graphQL.transform(builder -> builder.instrumentation(new DataLoaderDispatcherInstrumentation(dataLoaders)));
+        return graphQL;
     }
 
 }

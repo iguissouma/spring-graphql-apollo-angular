@@ -5,11 +5,12 @@ documents:
   - src/app/graphql/get-car.graphql
   - src/app/graphql/list-cars.graphql
   - src/app/graphql/save-car.graphql
+  - src/app/graphql/tick.graphql
 config:
   resolvers: false
 overwrite: true
 generates:
-  src/app/generated/graphql.ts:
+  src/api/index.ts:
     config:
       noNamespaces: true
       resolvers: false

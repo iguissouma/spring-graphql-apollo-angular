@@ -6,6 +6,17 @@ import { TdDialogService } from '@covalent/core';
 import { pluck } from 'rxjs/operators';
 
 import { Car, DeleteCarGQL, ListCarsGQL, Long } from '../../api';
+import { Apollo } from "apollo-angular";
+import gql from 'graphql-tag';
+import { Subscription } from "rxjs";
+
+const subscription = gql`
+  subscription Timer {
+    timer{
+      x
+    }
+  }
+`;
 
 @Component({
   selector: 'app-car-list',
@@ -18,8 +29,11 @@ export class CarListComponent implements OnInit, AfterViewInit {
   cars$: any;
   dataSource: MatTableDataSource<Car> = new MatTableDataSource();
   displayedColumns = ['id', 'image', 'name', 'buttons'];
+  timer: String;
+  tickSubscription: Subscription;
 
   constructor(
+    private apollo: Apollo,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private listCarsGQL: ListCarsGQL,
@@ -34,6 +48,14 @@ export class CarListComponent implements OnInit, AfterViewInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
+    this.tickSubscription = this.apollo
+      .subscribe({
+        query: subscription
+      })
+      .subscribe(({ data }) => {
+        console.log(data.timer.x);
+        this.timer = data.timer.x;
+      });
   }
 
   editCar(id: Long): void {
