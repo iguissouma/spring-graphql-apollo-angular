@@ -23,7 +23,7 @@ To run the server, cd into the `server` folder and run:
 ./mvnw spring-boot:run
 ```
 
-To run the client, cd into the `client` folder and run:
+To run the client, cd into the `frontend` folder and run:
  
 ```bash
 npm install && npm start
