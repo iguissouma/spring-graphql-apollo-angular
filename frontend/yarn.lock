@@ -635,10 +635,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@covalent/core@2.0.0-rc.1":
-  version "2.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@covalent/core/-/core-2.0.0-rc.1.tgz#6f76c27f22bd494b162d9af8ad2f04a7534611ef"
-  integrity sha512-GUoD1unhacmv6V9WGOuIXqxOxBtcRDI3BndSpAubBK8X2Znc4+6AjGqqXloEwOHrpmHlxgoosps9eXpo8FO/GA==
+"@covalent/core@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@covalent/core/-/core-2.1.0.tgz#6d466dbb1a2524a52269c39c2fafe46aac9672f2"
+  integrity sha512-I3/VL76E198y8O2vWXci7uLEfBEB9dO8uZWwaJN3RFlSuS/HCzc/NUrElJ9aRwgmTm8KLQgJheVbg/CRQbn2Ug==
   dependencies:
     tslib "^1.9.0"
 
