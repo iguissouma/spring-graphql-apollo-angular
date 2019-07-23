@@ -1,206 +1,171 @@
-export interface CarInput {
+import gql from "graphql-tag";
+import { Injectable } from "@angular/core";
+import * as Apollo from "apollo-angular";
+export type Maybe<T> = T | null;
+/** All built-in and custom scalars, mapped to their actual values */
+export type Scalars = {
+  ID: string;
+  String: string;
+  Boolean: boolean;
+  Int: number;
+  Float: number;
+  /** Long type */
+  Long: number;
+  /** Unrepresentable type */
+  UNREPRESENTABLE: any;
+};
+
+export type Car = {
+  __typename?: "Car";
+  readonly giphyUrl: Maybe<Scalars["String"]>;
+  readonly id: Maybe<Scalars["Long"]>;
+  readonly isCool: Scalars["Boolean"];
+  readonly name: Maybe<Scalars["String"]>;
+};
+
+export type CarInput = {
   /** A car's id */
-  readonly id: number | null;
+  readonly id: Maybe<Scalars["Long"]>;
   /** A car's name */
-  readonly name: string | null;
-}
-
-/** Long type */
-export type Long = number;
-
-// ====================================================
-// Documents
-// ====================================================
-
-export type DeleteCarVariables = {
-  readonly id: number;
+  readonly name: Maybe<Scalars["String"]>;
 };
 
-export type DeleteCarMutation = {
-  readonly __typename?: 'Mutation';
-
-  readonly deleteCar: boolean | null;
+/** Mutation root */
+export type Mutation = {
+  __typename?: "Mutation";
+  readonly deleteCar: Maybe<Scalars["Boolean"]>;
+  readonly saveCar: Maybe<Car>;
 };
 
-export type GetCarVariables = {
-  readonly id: number;
+/** Mutation root */
+export type MutationDeleteCarArgs = {
+  id: Maybe<Scalars["Long"]>;
 };
 
-export type GetCarQuery = {
-  readonly __typename?: 'Query';
-
-  readonly car: GetCarCar | null;
+/** Mutation root */
+export type MutationSaveCarArgs = {
+  car: Maybe<CarInput>;
 };
 
-export type GetCarCar = {
-  readonly __typename?: 'Car';
-
-  readonly id: number | null;
-
-  readonly name: string | null;
-
-  readonly giphyUrl: string | null;
+/** Query root */
+export type Query = {
+  __typename?: "Query";
+  readonly cars: Maybe<ReadonlyArray<Maybe<Car>>>;
+  readonly car: Maybe<Car>;
 };
 
-export type ListCarsVariables = {};
-
-export type ListCarsQuery = {
-  readonly __typename?: 'Query';
-
-  readonly cars: ReadonlyArray<ListCarsCars> | null;
+/** Query root */
+export type QueryCarArgs = {
+  id: Maybe<Scalars["Long"]>;
 };
 
-export type ListCarsCars = {
-  readonly __typename?: 'Car';
-
-  readonly id: number | null;
-
-  readonly name: string | null;
-
-  readonly giphyUrl: string | null;
+export type DeleteCarMutationVariables = {
+  id: Scalars["Long"];
 };
 
-export type SaveCarVariables = {
-  readonly car: CarInput;
+export type DeleteCarMutation = { readonly __typename?: "Mutation" } & Pick<
+  Mutation,
+  "deleteCar"
+>;
+
+export type GetCarQueryVariables = {
+  id: Scalars["Long"];
 };
 
-export type SaveCarMutation = {
-  readonly __typename?: 'Mutation';
-
-  readonly saveCar: SaveCarSaveCar | null;
+export type GetCarQuery = { readonly __typename?: "Query" } & {
+  readonly car: Maybe<
+    { readonly __typename?: "Car" } & Pick<Car, "id" | "name" | "giphyUrl">
+  >;
 };
 
-export type SaveCarSaveCar = {
-  readonly __typename?: 'Car';
+export type ListCarsQueryVariables = {};
 
-  readonly id: number | null;
-
-  readonly name: string | null;
-
-  readonly giphyUrl: string | null;
+export type ListCarsQuery = { readonly __typename?: "Query" } & {
+  readonly cars: Maybe<
+    ReadonlyArray<
+      Maybe<
+        { readonly __typename?: "Car" } & Pick<Car, "id" | "name" | "giphyUrl">
+      >
+    >
+  >;
 };
 
-// ====================================================
-// Scalars
-// ====================================================
+export type SaveCarMutationVariables = {
+  car: CarInput;
+};
 
-// ====================================================
-// Types
-// ====================================================
+export type SaveCarMutation = { readonly __typename?: "Mutation" } & {
+  readonly saveCar: Maybe<
+    { readonly __typename?: "Car" } & Pick<Car, "id" | "name" | "giphyUrl">
+  >;
+};
 
-/** Query root type */
-export interface Query {
-  readonly cars: ReadonlyArray<Car> | null;
-
-  readonly car: Car | null;
-}
-
-export interface Car {
-  readonly giphyUrl: string | null;
-
-  readonly id: number | null;
-
-  readonly isCool: boolean;
-
-  readonly name: string | null;
-}
-
-/** Mutation root type */
-export interface Mutation {
-  readonly deleteCar: boolean | null;
-
-  readonly saveCar: Car | null;
-}
-
-// ====================================================
-// Arguments
-// ====================================================
-
-export interface CarQueryArgs {
-  id: number | null;
-}
-export interface DeleteCarMutationArgs {
-  id: number | null;
-}
-export interface SaveCarMutationArgs {
-  car: CarInput | null;
-}
-
-// ====================================================
-// START: Apollo Angular template
-// ====================================================
-
-import { Injectable } from '@angular/core';
-import * as Apollo from 'apollo-angular';
-
-import gql from 'graphql-tag';
-
-// ====================================================
-// Apollo Services
-// ====================================================
+export const DeleteCarDocument = gql`
+  mutation DeleteCar($id: Long!) {
+    deleteCar(id: $id)
+  }
+`;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class DeleteCarGQL extends Apollo.Mutation<
   DeleteCarMutation,
-  DeleteCarVariables
+  DeleteCarMutationVariables
 > {
-  document: any = gql`
-    mutation DeleteCar($id: Long!) {
-      deleteCar(id: $id)
-    }
-  `;
+  document = DeleteCarDocument;
 }
+export const GetCarDocument = gql`
+  query GetCar($id: Long!) {
+    car(id: $id) {
+      id
+      name
+      giphyUrl
+    }
+  }
+`;
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
-export class GetCarGQL extends Apollo.Query<GetCarQuery, GetCarVariables> {
-  document: any = gql`
-    query GetCar($id: Long!) {
-      car(id: $id) {
-        id
-        name
-        giphyUrl
-      }
-    }
-  `;
+export class GetCarGQL extends Apollo.Query<GetCarQuery, GetCarQueryVariables> {
+  document = GetCarDocument;
 }
+export const ListCarsDocument = gql`
+  query ListCars {
+    cars {
+      id
+      name
+      giphyUrl
+    }
+  }
+`;
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ListCarsGQL extends Apollo.Query<
   ListCarsQuery,
-  ListCarsVariables
+  ListCarsQueryVariables
 > {
-  document: any = gql`
-    query ListCars {
-      cars {
-        id
-        name
-        giphyUrl
-      }
-    }
-  `;
+  document = ListCarsDocument;
 }
+export const SaveCarDocument = gql`
+  mutation SaveCar($car: CarInput!) {
+    saveCar(car: $car) {
+      id
+      name
+      giphyUrl
+    }
+  }
+`;
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class SaveCarGQL extends Apollo.Mutation<
   SaveCarMutation,
-  SaveCarVariables
+  SaveCarMutationVariables
 > {
-  document: any = gql`
-    mutation SaveCar($car: CarInput!) {
-      saveCar(car: $car) {
-        id
-        name
-        giphyUrl
-      }
-    }
-  `;
+  document = SaveCarDocument;
 }
-
-// ====================================================
-// END: Apollo Angular template
-// ====================================================

@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { MatPaginator, MatSort } from '@angular/material';
-import { MatTableDataSource } from '@angular/material/table';
-import { TdDialogService } from '@covalent/core';
-import { pluck } from 'rxjs/operators';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {MatPaginator, MatSort} from '@angular/material';
+import {MatTableDataSource} from '@angular/material/table';
+import {TdDialogService} from '@covalent/core';
+import {pluck} from 'rxjs/operators';
 
-import { Car, DeleteCarGQL, ListCarsGQL, Long } from '../../api';
+import {Car, DeleteCarGQL, ListCarsGQL, Long} from '../../api';
 
 @Component({
   selector: 'app-car-list',
@@ -13,8 +13,8 @@ import { Car, DeleteCarGQL, ListCarsGQL, Long } from '../../api';
   styleUrls: ['./car-list.component.css']
 })
 export class CarListComponent implements OnInit, AfterViewInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
   cars$: any;
   dataSource: MatTableDataSource<Car> = new MatTableDataSource();
   displayedColumns = ['id', 'image', 'name', 'buttons'];
@@ -25,7 +25,8 @@ export class CarListComponent implements OnInit, AfterViewInit {
     private listCarsGQL: ListCarsGQL,
     private deleteCarGQL: DeleteCarGQL,
     private dialogService: TdDialogService
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.cars$ = this.listCarsGQL.watch().valueChanges.pipe(pluck('data', 'cars'));
@@ -37,7 +38,7 @@ export class CarListComponent implements OnInit, AfterViewInit {
   }
 
   editCar(id: Long): void {
-    this.router.navigate([id], { relativeTo: this.activatedRoute });
+    this.router.navigate([id], {relativeTo: this.activatedRoute});
   }
 
   removeCar(id: Long): void {
@@ -55,13 +56,13 @@ export class CarListComponent implements OnInit, AfterViewInit {
                 id: id
               },
               {
-                update: (proxy, { data: { deleteCar } }) => {
+                update: (proxy, {data: {deleteCar}}) => {
                   // Read the data from our cache for this query.
-                  const data: any = proxy.readQuery({ query: this.listCarsGQL.document });
+                  const data: any = proxy.readQuery({query: this.listCarsGQL.document});
                   const index = data.cars.map(x => x.id).indexOf(id);
                   data.cars.splice(index, 1);
                   // Write our data back to the cache.
-                  proxy.writeQuery({ query: this.listCarsGQL.document, data });
+                  proxy.writeQuery({query: this.listCarsGQL.document, data});
                 }
               }
             )

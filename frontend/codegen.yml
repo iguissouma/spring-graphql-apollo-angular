@@ -9,7 +9,7 @@ config:
   resolvers: false
 overwrite: true
 generates:
-  src/app/generated/graphql.ts:
+  src/app/api/index.ts:
     config:
       noNamespaces: true
       resolvers: false
@@ -19,8 +19,7 @@ generates:
       scalars:
         Long: number
     plugins:
-      - typescript-common
-      - typescript-client
-      - typescript-server
+      - typescript
+      - typescript-operations
       - typescript-apollo-angular
 require: []
