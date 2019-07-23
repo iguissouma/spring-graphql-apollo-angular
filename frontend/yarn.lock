@@ -1158,7 +1158,7 @@ async@^1.5.2:
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
   integrity sha1-7GphrlZIDAw8skHJVhjiCJL5Zyo=
 
-async@^2.5.0, async@^2.6.0:
+async@^2.5.0:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/async/-/async-2.6.1.tgz#b245a23ca71930044ec53fa46aa00a3e87c6a610"
   integrity sha512-fNEiL2+AZt6AlAw/29Cr0UDe4sRAHCpEHh54WMz+Bb7QfNcFw4h3loofyJpLeQs4Yx7yuqu/2dLgM5hKOs6HlQ==
@@ -1747,15 +1747,6 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-chalk@2.4.1, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.3.0, chalk@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.1.tgz#18c49ab16a037b6eb0152cc83e3471338215b66e"
-  integrity sha512-ObN6h1v2fTJSmUXoS3nMQ92LbDK9be4TV+6G+omQlGJFdcUX5heKi1LZ1YnRMIgwTLEj3E24bT6tYni50rlCfQ==
-  dependencies:
-    ansi-styles "^3.2.1"
-    escape-string-regexp "^1.0.5"
-    supports-color "^5.3.0"
-
 chalk@2.4.2, chalk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
@@ -1776,29 +1767,14 @@ chalk@^1.0.0, chalk@^1.1.1, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-change-case@3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/change-case/-/change-case-3.0.2.tgz#fd48746cce02f03f0a672577d1d3a8dc2eceb037"
-  integrity sha512-Mww+SLF6MZ0U6kdg11algyKd5BARbyM4TbFBepwowYSR5ClfQGCGtxNXgykpN0uF/bstWeaGDT4JWaDh8zWAHA==
+chalk@^2.0.0, chalk@^2.0.1, chalk@^2.3.0, chalk@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.1.tgz#18c49ab16a037b6eb0152cc83e3471338215b66e"
+  integrity sha512-ObN6h1v2fTJSmUXoS3nMQ92LbDK9be4TV+6G+omQlGJFdcUX5heKi1LZ1YnRMIgwTLEj3E24bT6tYni50rlCfQ==
   dependencies:
-    camel-case "^3.0.0"
-    constant-case "^2.0.0"
-    dot-case "^2.1.0"
-    header-case "^1.0.0"
-    is-lower-case "^1.1.0"
-    is-upper-case "^1.1.0"
-    lower-case "^1.1.1"
-    lower-case-first "^1.0.0"
-    no-case "^2.3.2"
-    param-case "^2.1.0"
-    pascal-case "^2.0.0"
-    path-case "^2.1.0"
-    sentence-case "^2.1.0"
-    snake-case "^2.1.0"
-    swap-case "^1.1.0"
-    title-case "^2.1.0"
-    upper-case "^1.1.1"
-    upper-case-first "^1.1.0"
+    ansi-styles "^3.2.1"
+    escape-string-regexp "^1.0.5"
+    supports-color "^5.3.0"
 
 change-case@3.1.0:
   version "3.1.0"
@@ -2614,7 +2590,12 @@ depd@~1.1.2:
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
 
-dependency-graph@0.7.2, dependency-graph@^0.7.2:
+dependency-graph@0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/dependency-graph/-/dependency-graph-0.8.0.tgz#2da2d35ed852ecc24a5d6c17788ba57c3708755b"
+  integrity sha512-DCvzSq2UiMsuLnj/9AL484ummEgLtZIcRS7YvtO38QnpX3vqh9nJ8P+zhu8Ja+SmLrBHO2iDbva20jq38qvBkQ==
+
+dependency-graph@^0.7.2:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/dependency-graph/-/dependency-graph-0.7.2.tgz#91db9de6eb72699209d88aea4c1fd5221cac1c49"
   integrity sha512-KqtH4/EZdtdfWX0p6MGP9jljvxSY6msy/pRUD4jgNwVpv3v1QmNLlsB3LDSSUg79BRVSn7jI1QPRtArGABovAQ==
@@ -3684,27 +3665,14 @@ graphql-code-generator@0.18.2:
     request "2.88.0"
     valid-url "1.0.9"
 
-graphql-codegen-apollo-angular-template@0.14.5:
-  version "0.14.5"
-  resolved "https://registry.yarnpkg.com/graphql-codegen-apollo-angular-template/-/graphql-codegen-apollo-angular-template-0.14.5.tgz#0164cc0555f1208379467894ee473d33addb25f2"
-  integrity sha512-NuGTs2TpXUm9YyBxhCgHlPvrMe/jeynPtQXeuHfsg4KVmBTGzlMLrrnf5cXDUJu2ES2fJq5zSzrVRP0nln08nQ==
+graphql-codegen-apollo-angular-template@0.18.2:
+  version "0.18.2"
+  resolved "https://registry.yarnpkg.com/graphql-codegen-apollo-angular-template/-/graphql-codegen-apollo-angular-template-0.18.2.tgz#ccf6233cc81b99e20813e8d0e003e8dda1255950"
+  integrity sha512-Zz1ZZooe/k3omzFSs7mx0Jw6r6UaNqsKerokwSkcSjLNbERJXrYMRx3ptwSjFRkfmlnbG3LANUtjd3+E7jDgDQ==
   dependencies:
-    graphql-codegen-typescript-apollo-angular "0.14.5"
-    graphql-codegen-typescript-client "0.14.5"
-    graphql-codegen-typescript-common "0.14.5"
-
-graphql-codegen-core@0.14.5:
-  version "0.14.5"
-  resolved "https://registry.yarnpkg.com/graphql-codegen-core/-/graphql-codegen-core-0.14.5.tgz#e4bdcd996c1bc90c674145a2c69dc4d9d2df2d8d"
-  integrity sha512-8jNaoHkGVavnThszlLf1qF0gJYvicUGvH9615F9gbxNR9opzDUJiKFB8thsrUddpfIGUb0jYDsWkgpPGNG2Gjg==
-  dependencies:
-    chalk "2.4.1"
-    change-case "3.0.2"
-    common-tags "1.8.0"
-    graphql-tag "2.10.0"
-    graphql-tools "4.0.3"
-    ts-log "2.1.4"
-    winston "3.1.0"
+    graphql-codegen-typescript-apollo-angular "0.18.2"
+    graphql-codegen-typescript-client "0.18.2"
+    graphql-codegen-typescript-common "0.18.2"
 
 graphql-codegen-core@0.18.2:
   version "0.18.2"
@@ -3732,14 +3700,6 @@ graphql-codegen-introspection@0.14.5:
   resolved "https://registry.yarnpkg.com/graphql-codegen-introspection/-/graphql-codegen-introspection-0.14.5.tgz#23f16550cfbfcc94d4a1b24415ad078e8b2271ca"
   integrity sha512-6PZlnHgsga5k/QK2gQnCSklqzP1EYBlZ4WSOwL5xEMLurSVGM/DvxiAfMWUBtMZebfFam+x8Cu68omoU6SXBFw==
 
-graphql-codegen-plugin-helpers@0.14.5:
-  version "0.14.5"
-  resolved "https://registry.yarnpkg.com/graphql-codegen-plugin-helpers/-/graphql-codegen-plugin-helpers-0.14.5.tgz#15e2c802d7bc5550107bf81ad2f8f8dd04da772f"
-  integrity sha512-8oAvNil0C+QN9bNTmAMp8Uy0hdzKWcaKmND6PbGNpfg/CSXELq70z2wbipvDRFFm9U5TTadRdHySSEYKDJSPag==
-  dependencies:
-    graphql-codegen-core "0.14.5"
-    import-from "2.1.0"
-
 graphql-codegen-plugin-helpers@0.18.2:
   version "0.18.2"
   resolved "https://registry.yarnpkg.com/graphql-codegen-plugin-helpers/-/graphql-codegen-plugin-helpers-0.18.2.tgz#ce03d02ced0bc28ef2f61e0a5205d85ee7e9ccdb"
@@ -3748,33 +3708,23 @@ graphql-codegen-plugin-helpers@0.18.2:
     graphql-codegen-core "0.18.2"
     import-from "2.1.0"
 
-graphql-codegen-typescript-apollo-angular@0.14.5:
-  version "0.14.5"
-  resolved "https://registry.yarnpkg.com/graphql-codegen-typescript-apollo-angular/-/graphql-codegen-typescript-apollo-angular-0.14.5.tgz#8a55516521f32cdd6b83e4a63d243620908b4fdd"
-  integrity sha512-U2vojC7/J3lSsrMQyzMeDOnvd77RkJXqwsUgrCXvJPzVOKIF0hVO8JpnGyaEUZFRbeOuDlHUsPyODteunwGkzw==
+graphql-codegen-typescript-apollo-angular@0.18.2:
+  version "0.18.2"
+  resolved "https://registry.yarnpkg.com/graphql-codegen-typescript-apollo-angular/-/graphql-codegen-typescript-apollo-angular-0.18.2.tgz#3a3066bda48764a219778f7b515ed56a4fbe3a90"
+  integrity sha512-2VQ3lydt6H1/kkE3eqAwVhlnc/4n7P4kezIdiqx3U477vweWGma+7uafeYUiqp0CwOmQJx0VlUEn/ihdU0lYrw==
   dependencies:
-    dependency-graph "0.7.2"
-    graphql-codegen-plugin-helpers "0.14.5"
-    graphql-codegen-typescript-common "0.14.5"
+    dependency-graph "0.8.0"
+    graphql-codegen-plugin-helpers "0.18.2"
+    graphql-codegen-typescript-common "0.18.2"
 
-graphql-codegen-typescript-client@0.14.5:
-  version "0.14.5"
-  resolved "https://registry.yarnpkg.com/graphql-codegen-typescript-client/-/graphql-codegen-typescript-client-0.14.5.tgz#f709c5087c7e68ae5da95deee3922730b883bc02"
-  integrity sha512-LSygK0temRrXFQyK7y+/JcBj3PPnJ7IbtLs6O0EkxIJauJYVOLKX9uDEVz2gkV46Ku4iK4UlnXYZdRk9Fv87WA==
+graphql-codegen-typescript-client@0.18.2:
+  version "0.18.2"
+  resolved "https://registry.yarnpkg.com/graphql-codegen-typescript-client/-/graphql-codegen-typescript-client-0.18.2.tgz#5478f8af83fac8063362fe2905dac20fe02d5548"
+  integrity sha512-HffKYPrT5jGIRTiWCTst/X3EBpuOHsheI5tKUEf9NfrR8ySWs6PfqZO5fKCFWZOqC9xn7Y75jFXaeH8tgV5y1g==
   dependencies:
-    graphql-codegen-core "0.14.5"
-    graphql-codegen-plugin-helpers "0.14.5"
-    graphql-codegen-typescript-common "0.14.5"
-
-graphql-codegen-typescript-common@0.14.5:
-  version "0.14.5"
-  resolved "https://registry.yarnpkg.com/graphql-codegen-typescript-common/-/graphql-codegen-typescript-common-0.14.5.tgz#26259820cf9429c817b061ab0ab4bc09c5b95549"
-  integrity sha512-EGfAI7kKpr7Fa2iuPYjVm/HlSynaVqbwjn1zu7ma5upY9f3PCsVySaFY/BJtqqnGjaB8vad6y8PlOWQ0tc2Spw==
-  dependencies:
-    change-case "3.0.2"
-    common-tags "1.8.0"
-    graphql-codegen-core "0.14.5"
-    graphql-codegen-plugin-helpers "0.14.5"
+    graphql-codegen-core "0.18.2"
+    graphql-codegen-plugin-helpers "0.18.2"
+    graphql-codegen-typescript-common "0.18.2"
 
 graphql-codegen-typescript-common@0.18.2:
   version "0.18.2"
@@ -3856,17 +3806,6 @@ graphql-toolkit@0.2.0:
     request "2.88.0"
     tslib "^1.9.3"
     valid-url "1.0.9"
-
-graphql-tools@4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-4.0.3.tgz#23b5cb52c519212b1b2e4630a361464396ad264b"
-  integrity sha512-NNZM0WSnVLX1zIMUxu7SjzLZ4prCp15N5L2T2ro02OVyydZ0fuCnZYRnx/yK9xjGWbZA0Q58yEO//Bv/psJWrg==
-  dependencies:
-    apollo-link "^1.2.3"
-    apollo-utilities "^1.0.1"
-    deprecated-decorator "^0.1.6"
-    iterall "^1.1.3"
-    uuid "^3.1.0"
 
 graphql-tools@4.0.4:
   version "4.0.4"
@@ -5263,17 +5202,6 @@ log4js@^3.0.0:
     debug "^3.1.0"
     rfdc "^1.1.2"
     streamroller "0.7.0"
-
-logform@^1.9.1:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/logform/-/logform-1.10.0.tgz#c9d5598714c92b546e23f4e78147c40f1e02012e"
-  integrity sha512-em5ojIhU18fIMOw/333mD+ZLE2fis0EzXl1ZwHx4iQzmpQi6odNiY/t+ITNr33JZhT9/KEaH+UPIipr6a9EjWg==
-  dependencies:
-    colors "^1.2.1"
-    fast-safe-stringify "^2.0.4"
-    fecha "^2.3.3"
-    ms "^2.1.1"
-    triple-beam "^1.2.0"
 
 logform@^2.1.1:
   version "2.1.2"
@@ -8595,14 +8523,6 @@ wide-align@^1.1.0:
   dependencies:
     string-width "^1.0.2 || 2"
 
-winston-transport@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/winston-transport/-/winston-transport-4.2.0.tgz#a20be89edf2ea2ca39ba25f3e50344d73e6520e5"
-  integrity sha512-0R1bvFqxSlK/ZKTH86nymOuKv/cT1PQBMuDdA7k7f0S9fM44dNH6bXnuxwXPrN8lefJgtZq08BKdyZ0DZIy/rg==
-  dependencies:
-    readable-stream "^2.3.6"
-    triple-beam "^1.2.0"
-
 winston-transport@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/winston-transport/-/winston-transport-4.3.0.tgz#df68c0c202482c448d9b47313c07304c2d7c2c66"
@@ -8610,21 +8530,6 @@ winston-transport@^4.3.0:
   dependencies:
     readable-stream "^2.3.6"
     triple-beam "^1.2.0"
-
-winston@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/winston/-/winston-3.1.0.tgz#80724376aef164e024f316100d5b178d78ac5331"
-  integrity sha512-FsQfEE+8YIEeuZEYhHDk5cILo1HOcWkGwvoidLrDgPog0r4bser1lEIOco2dN9zpDJ1M88hfDgZvxe5z4xNcwg==
-  dependencies:
-    async "^2.6.0"
-    diagnostics "^1.1.1"
-    is-stream "^1.1.0"
-    logform "^1.9.1"
-    one-time "0.0.4"
-    readable-stream "^2.3.6"
-    stack-trace "0.0.x"
-    triple-beam "^1.3.0"
-    winston-transport "^4.2.0"
 
 winston@3.2.1:
   version "3.2.1"
