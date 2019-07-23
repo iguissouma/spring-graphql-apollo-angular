@@ -3688,17 +3688,17 @@ graphql-codegen-core@0.18.2:
     ts-log "2.1.4"
     winston "3.2.1"
 
-graphql-codegen-introspection-template@0.14.5:
-  version "0.14.5"
-  resolved "https://registry.yarnpkg.com/graphql-codegen-introspection-template/-/graphql-codegen-introspection-template-0.14.5.tgz#0a983bd0a36f574c412f3134c90d234bf3ff9eec"
-  integrity sha512-ZLl2sQ8/HUQjPLaDQyP5VPfN/HGkXGjgBuTlRIZiTcD/6Ki2MLJAe+G4gK+PA14erlXrVrpAnCg9wBpET+e44g==
+graphql-codegen-introspection-template@0.18.2:
+  version "0.18.2"
+  resolved "https://registry.yarnpkg.com/graphql-codegen-introspection-template/-/graphql-codegen-introspection-template-0.18.2.tgz#6cddd203b068855dbb2d843b79f064d4b1e500b1"
+  integrity sha512-jDSj3gr2XP7/cbqHYGpd1McAGdviTu8g/0QSKHZCrxQPxlbUfpAJWK0XFerMrgQMp61l4csr6GP2jqgzn7ZU4A==
   dependencies:
-    graphql-codegen-introspection "0.14.5"
+    graphql-codegen-introspection "0.18.2"
 
-graphql-codegen-introspection@0.14.5:
-  version "0.14.5"
-  resolved "https://registry.yarnpkg.com/graphql-codegen-introspection/-/graphql-codegen-introspection-0.14.5.tgz#23f16550cfbfcc94d4a1b24415ad078e8b2271ca"
-  integrity sha512-6PZlnHgsga5k/QK2gQnCSklqzP1EYBlZ4WSOwL5xEMLurSVGM/DvxiAfMWUBtMZebfFam+x8Cu68omoU6SXBFw==
+graphql-codegen-introspection@0.18.2:
+  version "0.18.2"
+  resolved "https://registry.yarnpkg.com/graphql-codegen-introspection/-/graphql-codegen-introspection-0.18.2.tgz#1e749e342aebe219271dcf4c5c56357ad300921a"
+  integrity sha512-L71rDI9gFQdcGNHsOnlW8nOtUXsZCFnXvC+faEwNse4P/OGrRm4jLQU/6/EUk92okFCbLytKWNcq1uxD8fiY1Q==
 
 graphql-codegen-plugin-helpers@0.18.2:
   version "0.18.2"
